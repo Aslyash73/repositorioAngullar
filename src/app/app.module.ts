@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 
 import { SharedModule } from './shared/shared.module';
 import { GifsModule } from './gifs/gifs.module';
+import { ListComponent } from './dbz/components/list/list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    ListComponent,
 
   ],
   imports: [
