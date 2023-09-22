@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GifsPageComponent } from './gifs-page/gifs-page.component';
-import { BusquedaComponent } from './busqueda/busqueda.component';
-import { ResultadosComponent } from './resultados/resultados.component';
 
 
+import { BusquedaComponent } from './components/busqueda/busqueda.component';
+import { HomePageComponent } from './pages/home/home-page.component';
+import { CardListComponent } from './components/card-list/card-list.component';
 
 @NgModule({
   declarations: [
-    GifsPageComponent,
+    HomePageComponent,
     BusquedaComponent,
-    ResultadosComponent
+    CardListComponent,
   ],
   exports: [
-        GifsPageComponent
+   HomePageComponent
   ],
   imports: [
     CommonModule

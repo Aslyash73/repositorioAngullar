@@ -6,33 +6,45 @@ import { Injectable } from '@angular/core';
 })
 export class GifsService {
 
-  private apiKey : string = 'yPMeYoGoFovrJh57yl44SuIUj3zL8lsq';
-  private _historial : string []=[];
-//cambiar any por su tipo
-  public resultados: any[]=[];
 
-  get historial(){
+      private _tagsHistory : string[] = [];
+      constructor(){}
 
-    return [...this._historial];
-  }
+      get historial(){
+        return [...this._tagsHistory];
+      }
 
-      constructor(private http:HttpClient){}
+      searchTag(tag: string): void{
+        this._tagsHistory.unshift(tag);
+      }
 
-  buscarGifs( query: string){
+//   private apiKey : string = 'yPMeYoGoFovrJh57yl44SuIUj3zL8lsq';
+//   private _historial : string []=[];
+// //cambiar any por su tipo
+//   public resultados: any[]=[];
 
-    query= query.trim().toLocaleLowerCase();
+//   get historial(){
 
-  if ( !this._historial.includes(query)){
-  this._historial.unshift(query);
-  this._historial = this._historial.splice(0,10);
-}
+//     return [...this._historial];
+//   }
 
-      this.http.get(`https://api.giphy.com/v1/gifs/search?api_key=yPMeYoGoFovrJh57yl44SuIUj3zL8lsq&q=${query}&limit=10`)
-          .subscribe( (resp:any) =>{
-            console.log(resp.data);
-            this.resultados=resp.data;
-          });
+//       constructor(private http:HttpClient){}
 
-  }
+//   buscarGifs( query: string){
+
+//     query= query.trim().toLocaleLowerCase();
+
+//   if ( !this._historial.includes(query)){
+//   this._historial.unshift(query);
+//   this._historial = this._historial.splice(0,10);
+// }
+
+//       this.http.get(`https://api.giphy.com/v1/gifs/search?api_key=yPMeYoGoFovrJh57yl44SuIUj3zL8lsq&q=${query}&limit=10`)
+//           .subscribe( (resp:any) =>{
+//             console.log(resp.data);
+//             this.resultados=resp.data;
+//           });
+
+//   }
 
 }
