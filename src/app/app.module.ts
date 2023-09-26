@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './gifs/pages/home/home-page.component';
 import { BusquedaComponent } from './gifs/components/busqueda/busqueda.component';
 import { CardListComponent } from './gifs/components/card-list/card-list.component';
+import { CardComponent } from './gifs/components/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     BusquedaComponent,
-    CardListComponent
+    CardListComponent,
+    CardComponent
 
   ],
   imports: [
