@@ -9,10 +9,13 @@ import { GifsService } from '../../gifs/services/gifs.service';
 })
 export class SidebarComponent {
 
-  get historial(){
+  constructor(private gifService: GifsService){}
+ // inyectar un servicio
+  get historial(): string[]{
     return this.gifService.historial;
   }
-
-  constructor(private gifService: GifsService){}  // inyectar un servicio
+  searchTag(item: string): void{
+    this.gifService.searchTag(item);
+  }
 
 }
